@@ -1,5 +1,7 @@
+import { Flex } from "@chakra-ui/react";
+
 const Dashboard = () => {
-  return <div>Dashboard</div>;
+  return <Flex w="60%">Dashboard</Flex>;
 };
 
 export default Dashboard;

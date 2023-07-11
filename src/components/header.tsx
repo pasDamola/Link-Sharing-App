@@ -1,13 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
-import {
-  Avatar,
-  Button,
-  Flex,
-  HStack,
-  Box,
-  Text,
-  Icon,
-} from "@chakra-ui/react";
+import { Avatar, Button, Flex, HStack } from "@chakra-ui/react";
 import { LinkIcon, AtSignIcon } from "@chakra-ui/icons";
 import { NavLink } from "react-router-dom";
 
@@ -27,48 +19,26 @@ export function Header() {
         name="Clara Fiona"
         src="https://images.unsplash.com/photo-1492633423870-43d1cd2775eb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fGJsYWNrJTIwZmVtYWxlJTIwaGVhZHNob3R8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60"
       />
-      <HStack spacing="3">
-        {/* <NavLink to="/">
-          <Tag size="sm" variant="unstyled" colorScheme="purple">
-            <TagLeftIcon as={LinkIcon} />
-            <TagLabel>Links</TagLabel>
-          </Tag>
-        </NavLink>
-        <NavLink to="/profile">
-          <Tag size="sm" variant="unstyled" colorScheme="purple">
-            <TagLeftIcon as={AtSignIcon} />
-            <TagLabel>Profile Details</TagLabel>
-          </Tag>
-        </NavLink> */}
+      <HStack spacing={4}>
         <NavLink to="/">
-          <Box
-            _hover={{
-              background: "purple",
-              color: "white",
-              padding: "5px",
-              borderRadius: "5px",
-            }}
+          <Button
+            size="sm"
+            leftIcon={<LinkIcon />}
+            colorScheme="purple"
+            variant="unstyled"
           >
-            <HStack spacing={1.5}>
-              <LinkIcon />
-              <Text fontSize="xs">Links</Text>
-            </HStack>
-          </Box>
+            Links
+          </Button>
         </NavLink>
         <NavLink to="/profile">
-          <Box
-            _hover={{
-              background: "purple",
-              color: "white",
-              padding: "5px",
-              borderRadius: "5px",
-            }}
+          <Button
+            size="sm"
+            leftIcon={<AtSignIcon />}
+            colorScheme="purple"
+            variant="outline"
           >
-            <HStack spacing={1.5}>
-              <AtSignIcon />
-              <Text fontSize="xs">Profile Details</Text>
-            </HStack>
-          </Box>
+            Profile Details
+          </Button>
         </NavLink>
       </HStack>
       <NavLink to="/preview">

@@ -1,11 +1,18 @@
+import { Flex } from "@chakra-ui/react";
 import { Outlet } from "react-router-dom";
-import { Header } from "../components/header";
+import { Header } from "../components/Header";
+import { LeftPanel } from "../components/LeftPanel";
 
 const RootLayout = () => {
   return (
     <>
-      <Header />
-      <Outlet />
+      <Flex direction="column">
+        <Header />
+        <Flex>
+          <LeftPanel />
+          <Outlet />
+        </Flex>
+      </Flex>
     </>
   );
 };

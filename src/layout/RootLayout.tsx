@@ -1,9 +1,10 @@
 import { Outlet } from "react-router-dom";
+import { Header } from "../components/header";
 
 const RootLayout = () => {
   return (
     <>
-      <div>This is the layout for Dashboard and Profile Page!</div>
+      <Header />
       <Outlet />
     </>
   );

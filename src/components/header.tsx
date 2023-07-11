@@ -4,9 +4,9 @@ import {
   Button,
   Flex,
   HStack,
-  Tag,
-  TagLabel,
-  TagLeftIcon,
+  Box,
+  Text,
+  Icon,
 } from "@chakra-ui/react";
 import { LinkIcon, AtSignIcon } from "@chakra-ui/icons";
 import { NavLink } from "react-router-dom";
@@ -16,6 +16,7 @@ export function Header() {
     <Flex
       bg="#f0f2f5"
       justify="space-between"
+      alignItems="center"
       py="2"
       px="4"
       borderRight="1px solid #f2f2f2"
@@ -40,36 +41,38 @@ export function Header() {
           </Tag>
         </NavLink> */}
         <NavLink to="/">
-          <Button
-            size="sm"
+          <Box
             _hover={{
               background: "purple",
               color: "white",
+              padding: "5px",
+              borderRadius: "5px",
             }}
-            leftIcon={<LinkIcon />}
-            colorScheme="purple"
-            variant="unstyled"
           >
-            Links
-          </Button>
+            <HStack spacing={1.5}>
+              <LinkIcon />
+              <Text fontSize="xs">Links</Text>
+            </HStack>
+          </Box>
         </NavLink>
         <NavLink to="/profile">
-          <Button
-            size="sm"
+          <Box
             _hover={{
               background: "purple",
               color: "white",
+              padding: "5px",
+              borderRadius: "5px",
             }}
-            leftIcon={<AtSignIcon />}
-            colorScheme="purple"
-            variant="unstyled"
           >
-            Profile Details
-          </Button>
+            <HStack spacing={1.5}>
+              <AtSignIcon />
+              <Text fontSize="xs">Profile Details</Text>
+            </HStack>
+          </Box>
         </NavLink>
       </HStack>
       <NavLink to="/preview">
-        <Button colorScheme="purple" variant="outline">
+        <Button size="xs" variant="outline" colorScheme="purple">
           Preview
         </Button>
       </NavLink>

@@ -1,12 +1,12 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
-import { Avatar, Button, Flex, HStack, Box } from "@chakra-ui/react";
+import { Avatar, Button, Flex, HStack, Box, Text } from "@chakra-ui/react";
 import { LinkIcon, AtSignIcon } from "@chakra-ui/icons";
 import { NavLink } from "react-router-dom";
 
 export function Header() {
   return (
     <Flex
-      bg="#f0f2f5"
+      bg="#ffffff"
       justify="space-between"
       alignItems="center"
       py="2"
@@ -26,12 +26,13 @@ export function Header() {
             return {
               backgroundColor: isActive ? "#efecfe" : "",
               color: isActive ? "#8876d7" : "#4b4f56",
-              border: isActive ? "none" : "",
+              borderRadius: isActive ? "2px" : "",
             };
           }}
         >
           <Box
             height="24px"
+            as="button"
             lineHeight="1.2"
             transition="all 0.2s cubic-bezier(.08,.52,.52,1)"
             border="none"
@@ -42,39 +43,45 @@ export function Header() {
             _hover={{
               bg: "#efecfe",
               color: "#8876d7",
+              borderRadius: "2px",
             }}
           >
-            <LinkIcon />
-            Links
+            <HStack>
+              <LinkIcon />
+              <Text>Links</Text>
+            </HStack>
           </Box>
         </NavLink>
-        <NavLink to="/profile">
+        <NavLink
+          to="/profile"
+          style={({ isActive }) => {
+            return {
+              backgroundColor: isActive ? "#efecfe" : "",
+              color: isActive ? "#8876d7" : "#4b4f56",
+              borderRadius: isActive ? "2px" : "",
+            };
+          }}
+        >
           <Box
-            as="button"
             height="24px"
+            as="button"
             lineHeight="1.2"
             transition="all 0.2s cubic-bezier(.08,.52,.52,1)"
-            border="1px"
+            border="none"
             px="8px"
             borderRadius="2px"
             fontSize="14px"
             fontWeight="semibold"
-            bg="#f5f6f7"
-            borderColor="#ccd0d5"
-            color="#4b4f56"
-            _hover={{ bg: "#ebedf0" }}
-            _active={{
-              bg: "#dddfe2",
-              transform: "scale(0.98)",
-              borderColor: "#bec3c9",
-            }}
-            _focus={{
-              boxShadow:
-                "0 0 1px 2px rgba(88, 144, 255, .75), 0 1px 1px rgba(0, 0, 0, .15)",
+            _hover={{
+              bg: "#efecfe",
+              color: "#8876d7",
+              borderRadius: "2px",
             }}
           >
-            <AtSignIcon />
-            Profile Details
+            <HStack>
+              <AtSignIcon />
+              <Text>Profile Details</Text>
+            </HStack>
           </Box>
         </NavLink>
       </HStack>
